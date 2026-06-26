@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>Чтобы избежать блокировок, наш сайт использует Google Диск, Media Fire и другие.</p>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOLOAL — Скачать Игры</title>
+    <style>
+        /* Переменные для легкой смены тем */
+        :root {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #3a3a3a;
+            --link-color: #4caf50;
+            --link-hover: #81c784;
+            --header-bg: #1a1a1a;
+        }
+        /* 2. Белая тема */
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --container-bg: #f5f5f5;
+  --text-color: #0013FF;
+  --header-bg: #eeeeee;
+}
+
+/* 3. Белая тема + синий текст */
+[data-theme="light-blue"] {
+  --bg-color: #ffffff;
+  --container-bg: #f5f5f5;
+  --text-color: #0044ff; /* Синий текст */
+  --header-bg: #eeeeee;
+}
+
+/* 4. Тёмная тема + синий текст */
+[data-theme="dark-blue"] {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --text-color: #00a8ff; /* Светло-синий/голубой текст */
+  --header-bg: #1a1a1a;
+}
+
+        /* Базовые стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        /* Кнопка настроек / смены темы */
+        .theme-toggle {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Сетка для разделов игр */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Карточка игры */
+        .game-card {
+            background-color: var(--container-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .game-card h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        /* Список версий */
+        .version-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 250px;
+            overflow-y: auto; /* Добавляет скролл, если версий слишком много */
+            padding-right: 5px;
+        }
+
+        .version-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .version-list::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .version-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .version-item:last-child {
+            border-bottom: none;
+        }
+
+        .download-btn {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .download-btn:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        .latest {
+            background-color: #4caf50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DOLOAL</h1>
+        <button class="theme-toggle" id="themeBtn">Сменить тему</button>
+    </header>
+
+    <div class="container">
+        <div class="welcome-text">
+            <h2>Архив старых и новых версий любимых игр</h2>
+            <p>У XDnyok32 нету прав на игры. Права на игры: DVloper, mystman12,Cawthon, Mojang </p>
+        </div>
+
+        <div class="games-grid">
+
+            <div class="game-card">
+                <h2>Granny</h2>
+                <ul class="version-list">
+                    <li class="version-item">
+                        <span>Версия 1.8 <span class="latest">Последняя</span></span>
+                        <a href="https://drive.google.com/file/d/1b5IwqAfB75GZQnxtEzN66-L4koOE8UcZ/view?usp=drivesdk" class="download-btn">Скачать</a>
+                    </li>
+                    <li class="version-item"><span>Версия 1.7</span> <a href="https://drive.google.com/file/d/1b9MbIbhuUhzImBkk1x47Sw2MtG0828cQ/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.6</span> <a href="https://drive.google.com/file/d/1xn1xMTFNbtDWabg_8klzymm4y_glfW0r/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.5</span> <a href="https://drive.google.com/file/d/10WpiKv09lAfxA4ZWDCfq10f36JwGiLIj/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.4</span> <a href="https://drive.google.com/file/d/1lPoa8DwZrQ1ZEoJ3QYHvx_MoYHcZOX-D/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.3</span> <a href="https://drive.google.com/file/d/1EvNPVKuz2GP6KoQXUJ3jTIBe4Nxd6OH7/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.2</span> <a href="https://drive.google.com/file/d/1cgcXLEYrvHBCTptO7drPzT-vg96v-RGl/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.1</span> <a href="https://drive.google.com/file/d/1TY_K66BIbSuLTLqZgCCFmNCl2VAWxzVd/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Версия 1.0</span> <a href="https://drive.google.com/file/d/1uCntZDOan-IDDN1-XzQ6X7fK3uy68wgL/view?usp=drivesdk" class="download-btn">Скачать</a></li>
+                </ul>
+            </div>
+
+            <div class="game-card">
+                <h2>Baldi's Basics</h2>
+                <ul class="version-list">
+                    <li class="version-item"><span>1.2 (Последняя)</span> <a href="https://www.mediafire.com/file/unc06p99efjh76v/Baldi's+Basics+Classic_1.2_APKPure.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span> 1.1 </span> <a href="https://www.mediafire.com/file/h6gj595bl0obm5j/Baldi's+Basics+Classic_1.1_APKPure.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Birthday Edition</span> <a href="https://www.mediafire.com/file/kxlzs1o2osvdcl2/Baldi's+Basics+Birthday+Bash+Party+2020_1.8.52_APKPure.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Classic 1.0</span> <a href="https://www.mediafire.com/file/a1c7v4ps85x67ue/Baldi's+Basics+Classic_1.0_APKPure.apk/file" class="download-btn">Скачать</a></li>
+                </ul>
+            </div>
+
+            <div class="game-card">
+                <h2>Five Nights At Freddy's</h2>
+                <ul class="version-list">
+                    <li class="version-item"><span>FNAF 7 (UCN)</span> <a href="https://www.mediafire.com/file/obkr5619cchy5a4/[APK][Mod]_five-nights-at-freddys-sl_v.2.0.5_[androidapplications.store]_2.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 6 (Pizzeria Sim)</span> <a href="https://www.mediafire.com/file/isynvd7ro9bhn8x/[APK][Mod]_ultimate-custom-night-fnaf-7_v.1.0.9_[androidapplications.store]+(3).apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 5 (Sister Location)</span> <a href="https://www.mediafire.com/file/60j0n9ru5leu5ws/[APK][Mod]_fnaf-6-pizzeria-simulator_v.1.0.8_[androidapplications.store].apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 4</span> <a href="https://www.mediafire.com/file/8xeojsa5g46j2xr/[APK][Mod]_five-nights-at-freddys_v.2.0.7_[androidapplications.store].apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 3</span> <a href="https://www.mediafire.com/file/hhajgprc9f9djek/[APK][Mod]_five-nights-at-freddys-2_v.2.0.7_[androidapplications.store].apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 2</span> <a href="https://www.mediafire.com/file/n0ihzs7uqtn4iwy/[APK][Mod]_five-nights-at-freddys-3_v.2.0.3_[androidapplications.store].apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>FNAF 1</span> <a href="https://www.mediafire.com/file/b8fn6acq95e99yt/[APK][Mod]_five-nights-at-freddys-4_v.2.0.3_[androidapplications.store].apk/file" class="download-btn">Скачать</a></li>
+                </ul>
+            </div>
+
+            <div class="game-card">
+                <h2>Minecraft</h2>
+                <ul class="version-list">
+                    <li class="version-item"><span>Релиз 2.130</span> <a href="https://www.mediafire.com/file/2zf828kpufajb3c/minecraft-1-21-130-03-xbox-servers-compressed.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.19</span> <a href="https://www.mediafire.com/file/56lfmwajc3chucp/minecraft-1-19-83-01-xbox-servers.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.18</span> <a href="https://www.mediafire.com/file/g65etfamk85dw0o/minecraft-1-18-32-02-xbox-servers.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.16</span> <a href="https://www.mediafire.com/file/elk516fd5j3l8jj/minecraft-1-16-221-01-xbox-servers.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.12</span> <a href="https://www.mediafire.com/file/r54kbgs4zd4gpes/minecraft-1-12-1-1-xbox-servers-skins.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.7.0.7</span> <a href="https://www.mediafire.com/file/bygu4xhquoowwjl/minecraft-1-7-0-7-xbox-servers-skins.apk/file" class="download-btn">Скачать</a></li>
+                    <li class="version-item"><span>Релиз 1.0</span> <a href="https://www.mediafire.com/file/qqr616nc7d7c6x1/minecraft-1-0-9-release.apk/file" class="download-btn">Скачать</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Скрипт переключения темы (Темная / Светлая)
+        const toggleBtn = document.getElementById('themeBtn');
+        
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
